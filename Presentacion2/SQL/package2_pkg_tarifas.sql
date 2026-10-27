@@ -1,15 +1,15 @@
 -- Especificacion: funcion accesible desde SQL y otros programas PL/SQL.
 CREATE OR REPLACE PACKAGE pkg_tarifas IS
     FUNCTION fn_calcular_tarifa(
-        p_id_ruta    IN VARCHAR2,
-        p_id_usuario IN VARCHAR2
+        p_id_ruta    IN NUMBER,
+        p_id_usuario IN NUMBER
     ) RETURN NUMBER;
 END pkg_tarifas;
 /
 
 CREATE OR REPLACE PACKAGE BODY pkg_tarifas IS
     -- Funcion privada: solo esta declarada en el body.
-    FUNCTION fn_usuario_existe_privado(p_id_usuario IN VARCHAR2)
+    FUNCTION fn_usuario_existe_privado(p_id_usuario IN NUMBER)
     RETURN BOOLEAN
     IS
         v_cant NUMBER;
@@ -23,8 +23,8 @@ CREATE OR REPLACE PACKAGE BODY pkg_tarifas IS
     END fn_usuario_existe_privado;
 
     FUNCTION fn_calcular_tarifa(
-        p_id_ruta    IN VARCHAR2,
-        p_id_usuario IN VARCHAR2
+        p_id_ruta    IN NUMBER,
+        p_id_usuario IN NUMBER
     ) RETURN NUMBER
     IS
         v_monto_base  tarifa.monto_base_clp%TYPE;
