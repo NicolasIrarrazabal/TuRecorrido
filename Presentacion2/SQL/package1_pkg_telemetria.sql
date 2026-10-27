@@ -1,13 +1,13 @@
 -- Especificacion publica.
 CREATE OR REPLACE PACKAGE pkg_telemetria IS
-    FUNCTION fn_velocidad_promedio(p_id_recorrido IN VARCHAR2)
+    FUNCTION fn_velocidad_promedio(p_id_recorrido IN NUMBER)
     RETURN NUMBER;
 END pkg_telemetria;
 /
 
 -- Implementacion de la funcion del package.
 CREATE OR REPLACE PACKAGE BODY pkg_telemetria IS
-    FUNCTION fn_velocidad_promedio(p_id_recorrido IN VARCHAR2)
+    FUNCTION fn_velocidad_promedio(p_id_recorrido IN NUMBER)
     RETURN NUMBER
     IS
         v_promedio NUMBER;

@@ -1,7 +1,7 @@
 -- Cuenta tickets de un conductor o vehiculo dentro de [inicio, fin).
 CREATE OR REPLACE PROCEDURE sp_evaluar_reincidencia (
     p_tipo_objetivo IN VARCHAR2,
-    p_id_objetivo   IN VARCHAR2,
+    p_id_objetivo   IN NUMBER,
     p_fecha_inicio IN TIMESTAMP,
     p_fecha_fin    IN TIMESTAMP,
     p_limite       IN NUMBER,
